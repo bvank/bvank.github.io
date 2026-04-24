@@ -15,21 +15,39 @@
     }
 
     main {
-      max-width: 760px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 48px 20px;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       margin-top: 0;
+      line-height: 1.2;
     }
 
     .card {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.10);
       border-radius: 14px;
-      padding: 20px;
+      padding: 22px;
       margin-bottom: 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 34px 24px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: rgba(255,255,255,0.82);
+      max-width: 680px;
+      margin: 0 auto 18px;
     }
 
     .button {
@@ -41,17 +59,67 @@
       text-decoration: none;
       margin-right: 10px;
       margin-top: 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .button.primary {
+      background: #365f8f;
+    }
+
+    .button.disabled {
+      opacity: 0.48;
+      cursor: not-allowed;
+      pointer-events: none;
     }
 
     .subtle {
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.68);
       font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .download-card {
+      margin-bottom: 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.78);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    details {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    details p {
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.75);
     }
 
     footer {
       margin-top: 40px;
       font-size: 13px;
       color: rgba(255,255,255,0.5);
+      text-align: center;
     }
 
     a {
@@ -64,17 +132,50 @@
   <main>
 
     <!-- HERO -->
-    <section class="card">
+    <section class="card hero">
       <h1>LootBox</h1>
-      <p>
-        A lightweight, local-first random draw app for dungeon masters, facilitators, and shared table experiences.
+      <p class="tagline">
+        A lightweight, local-first random draw app for games, events, raffles, classrooms, facilitators, and shared table experiences.
       </p>
 
-      <a class="button" href="#">Web Version (Coming Soon)</a>
+      <a class="button primary" href="#downloads">Get LootBox</a>
       <a class="button" href="privacy.html">Privacy Policy</a>
 
       <p class="subtle">
-        No account required. Runs locally. Built for quick setup and use.
+        No account required. Runs locally. Built for quick setup, quick draws, and reusable custom lists.
+      </p>
+    </section>
+
+    <!-- DOWNLOADS -->
+    <section id="downloads">
+      <h2>Downloads</h2>
+
+      <div class="grid">
+        <section class="card download-card">
+          <span class="badge">Games Edition</span>
+          <h3>LootBox</h3>
+          <p>
+            Built for tabletop games, dungeon masters, party loot, randomized rewards, treasure tables, and game-night item draws.
+          </p>
+          <a class="button primary" href="#">Google Play – Temporary Link</a>
+          <a class="button disabled" href="#">Apple App Store – Coming Soon</a>
+          <a class="button disabled" href="#">Web Download – Coming Soon</a>
+        </section>
+
+        <section class="card download-card">
+          <span class="badge">Events Edition</span>
+          <h3>LootBox Events</h3>
+          <p>
+            Built for raffles, prize drawings, classrooms, meetings, giveaways, event facilitators, and non-game random selections.
+          </p>
+          <a class="button primary" href="#">Google Play – Temporary Link</a>
+          <a class="button disabled" href="#">Apple App Store – Coming Soon</a>
+          <a class="button disabled" href="#">Web Download – Coming Soon</a>
+        </section>
+      </div>
+
+      <p class="subtle">
+        Replace the temporary Google Play links above once the public store links are available.
       </p>
     </section>
 
@@ -86,8 +187,23 @@
         <li>Draw random results from your pool</li>
         <li>Display results cleanly for group viewing</li>
         <li>Reset and reuse instantly</li>
-        <li>Customize visuals with themes and styles</li>
+        <li>Customize visuals with themes, boxes, and backgrounds</li>
+        <li>Use locally without accounts or cloud setup</li>
       </ul>
+    </section>
+
+    <!-- EDITION DIFFERENCE -->
+    <section class="card">
+      <h2>Which version should I use?</h2>
+      <p>
+        <strong>LootBox</strong> is the game-focused version. Use it for RPG loot, treasure pulls, random rewards, campaign tools, and themed game-night draws.
+      </p>
+      <p>
+        <strong>LootBox Events</strong> is the general-purpose event version. Use it for raffles, classroom picks, prize drawings, office events, giveaways, and facilitator-led selections.
+      </p>
+      <p class="subtle">
+        Both versions follow the same simple idea: load a list, open the box, draw a result.
+      </p>
     </section>
 
     <!-- HOW TO USE -->
@@ -97,27 +213,76 @@
         <li>Load or import a list of items</li>
         <li>Open the box to draw a random result</li>
         <li>Take or leave items as needed</li>
+        <li>Reset and reuse the list for the next session</li>
       </ol>
       <p class="subtle">
         Designed for live use at a table, on a screen, or in a shared session.
       </p>
     </section>
 
+    <!-- PRIVACY -->
+    <section class="card">
+      <h2>Privacy-first by design</h2>
+      <p>
+        LootBox is designed as a local-first app. It does not require an account, login, or hosted user profile.
+      </p>
+      <a class="button" href="privacy.html">Read the Privacy Policy</a>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card">
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>Do I need an account?</summary>
+        <p>No. LootBox is designed to work without accounts or identity management.</p>
+      </details>
+
+      <details>
+        <summary>What is the difference between LootBox and LootBox Events?</summary>
+        <p>LootBox is themed for games and tabletop use. LootBox Events is themed for raffles, giveaways, classrooms, meetings, and general event use.</p>
+      </details>
+
+      <details>
+        <summary>Can I use my own item lists?</summary>
+        <p>Yes. LootBox is built around custom lists that can be reused, reset, and drawn from during a session.</p>
+      </details>
+
+      <details>
+        <summary>Is the web version available?</summary>
+        <p>Not yet. The web download is planned and will be added here when available.</p>
+      </details>
+
+      <details>
+        <summary>Is an iPhone version available?</summary>
+        <p>Not yet. Apple App Store availability is planned for a future release.</p>
+      </details>
+
+      <details>
+        <summary>Can I use LootBox for non-game raffles?</summary>
+        <p>Yes. LootBox Events is the best fit for raffles, prize drawings, classroom picks, office events, and giveaways.</p>
+      </details>
+
+      <details>
+        <summary>Does LootBox store my data online?</summary>
+        <p>No account or cloud profile is required. See the Privacy Policy for the current privacy details.</p>
+      </details>
+    </section>
+
     <!-- AVAILABILITY -->
     <section class="card">
       <h2>Availability</h2>
       <ul>
-        <li>Android APK – available</li>
-        <li>Windows desktop build – available</li>
-        <li>Web version – in development</li>
+        <li>LootBox for Android – available through Google Play temporary link</li>
+        <li>LootBox Events for Android – available through Google Play temporary link</li>
+        <li>Apple App Store – coming soon</li>
+        <li>Web download – coming soon</li>
       </ul>
     </section>
 
     <!-- FOOTER -->
     <footer>
-      <p>
-        LootBox © 2026
-      </p>
+      <p>LootBox © 2026</p>
       <p>
         <a href="privacy.html">Privacy Policy</a>
       </p>
